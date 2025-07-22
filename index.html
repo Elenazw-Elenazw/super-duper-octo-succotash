@@ -96,7 +96,12 @@
     const scrollIndicator = document.getElementById('scrollIndicator');
 
     let shapes = [];
-    const maxShapes = 50;
+   const isMobile = /Android|webOS|iPhone|iPad|IEMobile|Opera Mini/i.test(navigator.userAgent);
+let maxShapes = 50; // Значение по умолчанию для десктопов
+
+if (isMobile) {
+    maxShapes = 100; // Увеличиваем количество фигур для мобильных
+}
 
     // Пути к вашим изображениям
     const imagePaths = [
